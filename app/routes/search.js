@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
   getData(){
-    var items = Ember.A([]);
+    let items = Ember.A([]);
     items.addObject({
       id: 1,
       category: 'cat1',
@@ -18,7 +18,8 @@ export default Route.extend({
       nominationrequired: false,
       description: 'string description',
       additionalinfo: 'string of info',
-      recurring: true
+      recurring: true,
+      expiring: true
 
     });
     items.addObject({
@@ -36,7 +37,8 @@ export default Route.extend({
       nominationrequired: false,
       description: 'string description',
       additionalinfo: 'string of info',
-      recurring: true
+      recurring: true,
+      expiring: false
     });
     items.addObject({
       id: 3,
@@ -53,7 +55,8 @@ export default Route.extend({
       nominationrequired: false,
       description: 'string description',
       additionalinfo: 'string of info',
-      recurring: true
+      recurring: true,
+      expiring: true
     });
     items.addObject({
       id: 4,
@@ -70,7 +73,8 @@ export default Route.extend({
       nominationrequired: false,
       description: 'string description',
       additionalinfo: 'string of info',
-      recurring: true
+      recurring: true,
+      expiring: false
     });
     return items;
   },

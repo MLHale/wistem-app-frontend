@@ -13,7 +13,9 @@ export default Route.extend({
       url: 'https://google.com',
       stemfields: 'String for now, stem',
       name: 'Award for awesomeness',
-      typeofapplicant: 'string applicant',
+      typeofapplicant: [
+        "Faculty", "Student", "Staff"
+      ],
       awardsource: 'string source',
       nominationrequired: false,
       description: 'string description',
@@ -32,7 +34,9 @@ export default Route.extend({
       url: 'https://google.com',
       stemfields: 'String for now, stem',
       name: 'Award for awesomeness',
-      typeofapplicant: 'string applicant',
+      typeofapplicant: [
+        "Faculty", "Student", "Staff"
+      ],
       awardsource: 'string source',
       nominationrequired: false,
       description: 'string description',
@@ -50,7 +54,9 @@ export default Route.extend({
       url: 'https://google.com',
       stemfields: 'String for now, stem',
       name: 'Award for awesomeness',
-      typeofapplicant: 'string applicant',
+      typeofapplicant: [
+        "Faculty", "Student", "Staff"
+      ],
       awardsource: 'string source',
       nominationrequired: false,
       description: 'string description',
@@ -68,7 +74,9 @@ export default Route.extend({
       url: 'https://google.com',
       stemfields: 'String for now, stem',
       name: 'Award for awesomeness',
-      typeofapplicant: 'string applicant',
+      typeofapplicant: [
+        "Faculty", "Student", "Staff"
+      ],
       awardsource: 'string source',
       nominationrequired: false,
       description: 'string description',

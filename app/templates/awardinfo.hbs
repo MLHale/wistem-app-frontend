@@ -1,0 +1,114 @@
+
+{{!-- {{page-toolbar pageTitle="Award Information" isDemo=false}}
+{{#doc-content class="-layout-column flex-50"}}
+  {{#paper-card}} --}}
+    {{!-- {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        <h2>Award Information</h2>
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}} --}}
+    {{#paper-content}}
+      {{!-- {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}} --}}
+      {{#paper-form as |form|}}
+        <div class="layout-column centered-form">
+          <h4>Enter New Award Information</h4>
+          <div class="layout-column flex-50">
+            {{form.input label="Awart Title" value=awardtitle onChange=(action (mut awardtitle)) required=true}}
+          </div>
+          <div class="layout-column flex-50">
+            {{form.input label="Sponsoring Organization" value=sponser onChange=(action (mut sponser)) required=true}}
+          </div>
+          <div class="layout-column flex-50">
+            {{form.input label="URL/Web link for the Award" value=awardurl onChange=(action (mut awardurl)) required=true}}
+          </div>
+          <div class="layout-column">
+            <h5>Select the STEM field targeted by the Award. Check all that apply.
+                If the award targets a very specific area, check 'Other' and Specify area </h5>
+            {{#paper-checkbox value=science onChange=(action (mut science))}}
+              Natural Science {{science}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=it onChange=(action (mut it))}}
+              Information Technology {{it}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=engineering onChange=(action (mut engineering))}}
+              Engineering {{engineering}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=math onChange=(action (mut math))}}
+              Mathematics {{math}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=stem onChange=(action (mut stem))}}
+              The Art part of STEM (STEAM) {{stem}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=discipline onChange=(action (mut discipline))}}
+              All Disciplines {{discipline}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=other onChange=(action (mut other))}}
+              Other: {{other}}
+            {{/paper-checkbox}}
+            {{form.input label="Specify other area" value=other onChange=(action (mut other)) required=true}}
+        </div>
+        <div class="layout layout-sm-column">
+          {{paper-input class="flex" label="Submission date" type="date" value=date onChange=(action (mut date))}}
+        </div>
+          <div class="layout-column">
+            <h5>Select the applicant type. Check all that apply.</h5>
+            {{#paper-checkbox value=staff onChange=(action (mut staff))}}
+              Staff {{staff}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=professor onChange=(action (mut professor))}}
+              Faculty-Professor {{professor}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=tenured onChange=(action (mut tenured))}}
+              Tenured-Faculty {{tenured}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=nontenured onChange=(action (mut nontenured))}}
+              Non-tenured Faculty {{nontenured}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=phd onChange=(action (mut phd))}}
+              PhD Required {{phd}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=discipline onChange=(action (mut discipline))}}
+              Graduare Faculty{{discipline}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=Graduate onChange=(action (mut Graduate))}}
+              Student (Graduate) {{Graduate}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=Undergraduate onChange=(action (mut Undergraduate))}}
+              Student (Undergraduate) {{Undergraduate}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value= otherstaff onChange=(action (mut otherstaff))}}
+              Other: {{otherstaff}}
+            {{/paper-checkbox}}
+            {{form.input label="Specify other staff" value=otherstf onChange=(action (mut otherstf)) required=true}}
+        </div>
+
+          <div class="layout-column">
+            <h5>Award Requirements. Check all that apply.</h5>
+            {{#paper-checkbox value=advise onChange=(action (mut advise))}}
+              Advising {{advise}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=mentor onChange=(action (mut mentor))}}
+              Mentoring {{mentor}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=research onChange=(action (mut research))}}
+              Research and Creativity {{research}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=teaching onChange=(action (mut teaching))}}
+              Teaching {{teaching}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=outreach onChange=(action (mut outreach))}}
+              Outreach (Community Engagement) {{outreach}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=service onChange=(action (mut service))}}
+              Service Learning{{service}}
+            {{/paper-checkbox}}
+            {{#paper-checkbox value=otherreq onChange=(action (mut otherreq))}}
+              Other : {{otherreq}}
+            {{/paper-checkbox}}
+              {{form.input label="Specify other requirements" value=othersreq onChange=(action (mut othersreq)) required=true}}
+        {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}
+      </div>
+      </div>
+    {{/paper-form}}
+{{/paper-content}}
+{{outlet}}

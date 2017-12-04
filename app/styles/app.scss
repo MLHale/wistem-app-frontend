@@ -1,0 +1,11 @@
+@import 'ember-paper';
+.paper-right{
+  marigin-left:500x;
+}
+.centered-form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items: center;
+}

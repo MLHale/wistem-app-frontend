@@ -1,0 +1,61 @@
+{{#paper-list}}
+  {{#each model as |item|}}
+    {{#paper-item onClick=(action "openDialog" item) class="md-4-line"}}
+
+      <div class="layout-row flex">
+      <div class="md-list-item-text flex-15">
+        <h3>{{item.name}}</h3>
+      </div>
+      <div class="md-list-item-text">
+        <div>A</div>
+        <div>Applicants:
+        {{#each item.typeofapplicant as |applicant|}}
+          {{applicant}}
+        {{/each}}
+        </div>
+        <div>Visit: {{item.url}}</div>
+      </div>
+      <div class="md-list-item-text" style="padding:15%">
+        <div>D</div>
+        <div>E</div>
+        <div>Deadline: {{item.deadline}}</div>
+      </div>
+      </div>
+
+
+
+
+
+    {{/paper-item}}
+  {{/each}}
+{{/paper-list}}
+
+{{#if showDialog}}
+  {{#paper-dialog class="flex-77" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
+    {{#paper-toolbar}}
+      {{#paper-toolbar-tools}}
+        <h2>{{selectedAward.name}}</h2>
+        <span class="flex"></span>
+        {{#paper-button iconButton=true onClick=(action "closeDialog" "cancel")}}{{paper-icon icon="close"}}{{/paper-button}}
+      {{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+
+    {{#paper-dialog-content}}
+      <p>
+        Deadline: {{selectedAward.deadline}}
+      </p>
+      <p>
+        Description: {{selectedAward.description}}
+      </p>
+    {{/paper-dialog-content}}
+
+    {{#paper-dialog-actions class="layout-row"}}
+      <span class="flex"></span>
+      {{#paper-button onClick=(action "closeDialog" "cancel")}}Cancel{{/paper-button}}
+      {{#paper-button onClick=(action "closeDialog" "ok")}}OK{{/paper-button}}
+    {{/paper-dialog-actions}}
+  {{/paper-dialog}}
+{{/if}}
+
+
+

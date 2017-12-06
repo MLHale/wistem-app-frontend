@@ -7,10 +7,14 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+<<<<<<< HEAD
   this.route('home');
   this.route('login');
   this.route('register');
   this.route('awardinfo');
+=======
+  this.route('search');
+>>>>>>> 904a7c8ce59786e211ae6a344077ecd104a0e268
 });
 
 export default Router;

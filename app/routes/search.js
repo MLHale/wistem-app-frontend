@@ -5,84 +5,140 @@ export default Route.extend({
     let items = Ember.A([]);
     items.addObject({
       id: 1,
+
+      title: 'Award for awesomeness Number 1',
+      description: 'description',
+      award_link: 'https://gogole.com',
+      sponsor_org: 'Whats in this one?',
+      stem_field: [
+        "Science", "Math", "Technology"
+      ],
+      recurring: true,
+      nom_req: false,
+      recur_interval: 'yearly',
+      open_date: '2017-11-03',
+      nom_deadline: '2018-11-03',
+      subm_deadline: '2018-11-03',
+      applicant_type: 'Type',
+      award_purpose: [
+        "Science", "Math", "Technology"
+      ],
+      additional_info: 'a long text',
+      source: 'Somewhere',
+      previous_applicants: 20,
+      created_by: 'Ties to profile',
+      created_on: '2017-10-03',
+
+
       category: 'cat1',
-      deadline: '2017-12-03',
-      openingdate: '2017-11-03',
       requirements: 'string for now, requirements',
       criteria: 'string for criteriat',
-      url: 'https://google.com',
-      stemfields: 'String for now, stem',
-      name: 'Award for awesomeness',
       typeofapplicant: [
         "Faculty", "Student", "Staff"
-      ],
-      awardsource: 'string source',
-      nominationrequired: false,
-      description: 'string description',
-      additionalinfo: 'string of info',
-      recurring: true,
-      expiring: true
+      ]
 
     });
     items.addObject({
       id: 2,
+
+      title: 'Award for awesomeness Number 2',
+      description: 'description',
+      award_link: 'https://gogole.com',
+      sponsor_org: 'Whats in this one?',
+      stem_field: [
+        "Science", "Math", "Technology"
+      ],
+      recurring: true,
+      nom_req: false,
+      recur_interval: 'yearly',
+      open_date: '2017-11-03',
+      nom_deadline: '2018-11-03',
+      subm_deadline: '2018-11-03',
+      applicant_type: 'Type',
+      award_purpose: [
+        "Science", "Math", "Technology"
+      ],
+      additional_info: 'a long text',
+      source: 'Somewhere',
+      previous_applicants: 20,
+      created_by: 'Ties to profile',
+      created_on: '2017-10-03',
+
+
       category: 'cat1',
-      deadline: '2017-12-03',
-      openingdate: '2017-11-03',
       requirements: 'string for now, requirements',
       criteria: 'string for criteriat',
-      url: 'https://google.com',
-      stemfields: 'String for now, stem',
-      name: 'Award for awesomeness',
       typeofapplicant: [
         "Faculty", "Student", "Staff"
-      ],
-      awardsource: 'string source',
-      nominationrequired: false,
-      description: 'string description',
-      additionalinfo: 'string of info',
-      recurring: true,
-      expiring: false
+      ]
     });
     items.addObject({
       id: 3,
+
+      title: 'Award for awesomeness Number 3',
+      description: 'description',
+      award_link: 'https://gogole.com',
+      sponsor_org: 'Whats in this one?',
+      stem_field: [
+        "Science", "Math", "Technology"
+      ],
+      recurring: true,
+      nom_req: false,
+      recur_interval: 'yearly',
+      open_date: '2017-11-03',
+      nom_deadline: '2018-11-03',
+      subm_deadline: '2018-11-03',
+      applicant_type: 'Type',
+      award_purpose: [
+        "Science", "Math", "Technology"
+      ],
+      additional_info: 'a long text',
+      source: 'Somewhere',
+      previous_applicants: 20,
+      created_by: 'Ties to profile',
+      created_on: '2017-10-03',
+
+
       category: 'cat1',
-      deadline: '2017-12-03',
-      openingdate: '2017-11-03',
       requirements: 'string for now, requirements',
       criteria: 'string for criteriat',
-      url: 'https://google.com',
-      stemfields: 'String for now, stem',
-      name: 'Award for awesomeness',
       typeofapplicant: [
         "Faculty", "Student", "Staff"
-      ],
-      awardsource: 'string source',
-      nominationrequired: false,
-      description: 'string description',
-      additionalinfo: 'string of info',
-      recurring: true,
-      expiring: true
+      ]
     });
     items.addObject({
       id: 4,
+
+      title: 'Award for awesomeness Number 4',
+      description: 'description',
+      award_link: 'https://gogole.com',
+      sponsor_org: 'Whats in this one?',
+      stem_field: [
+        "Science", "Math", "Technology"
+      ],
+      recurring: true,
+      nom_req: false,
+      recur_interval: 'yearly',
+      open_date: '2017-11-03',
+      nom_deadline: '2018-11-03',
+      subm_deadline: '2018-11-03',
+      applicant_type: 'Type',
+      award_purpose: [
+        "Science", "Math", "Technology"
+      ],
+      additional_info: 'a long text',
+      source: 'Somewhere',
+      previous_applicants: 20,
+      created_by: 'Ties to profile',
+      created_on: '2017-10-03',
+
+
       category: 'cat1',
-      deadline: '2017-12-03',
-      openingdate: '2017-11-03',
       requirements: 'string for now, requirements',
       criteria: 'string for criteriat',
-      url: 'https://google.com',
-      stemfields: 'String for now, stem',
-      name: 'Award for awesomeness',
       typeofapplicant: [
         "Faculty", "Student", "Staff"
-      ],
-      awardsource: 'string source',
-      nominationrequired: false,
-      description: 'string description',
-      additionalinfo: 'string of info',
-      recurring: true,
-      expiring: false
+      ]
     });
     return items;
   },

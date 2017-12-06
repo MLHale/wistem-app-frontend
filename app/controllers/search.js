@@ -17,5 +17,14 @@ export default Controller.extend({
       this.set('showDialog', false);
     },
 
+    flatButton(title, fields){
+      console.log(title);
+
+      alert('You are searching for ' + title + fields);
+
+
+    }
+
+
   }
 });

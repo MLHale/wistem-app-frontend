@@ -1,11 +1,24 @@
 <div class="jumbo">
-{{#paper-list}}
-  {{#each model as |item|}}
-    {{#paper-item onClick=(action "openDialog" item) class="md-4-line"}}
-      {{award-listing item=item}}
-    {{/paper-item}}
-  {{/each}}
-{{/paper-list}}
+  <div>
+
+  {{paper-input class="flex-30" label="Award Title" value=title onChange=(action (mut title))}}
+    <p>
+       Stem Fields:
+      {{#power-select-multiple options=model.stemfields selected=stemfield placeholder="Select some names..." onchange=(action (mut stemfield)) as |stemfields|}}
+        {{stemfields}}
+      {{/power-select-multiple}}
+    </p>
+  {{#paper-button onClick=(action "flatButton" title stemfield)}}Search{{/paper-button}}
+  </div>
+  <div>
+  {{#paper-list}}
+    {{#each model.awards as |item|}}
+      {{#paper-item onClick=(action "openDialog" item) class="md-4-line"}}
+        {{award-listing item=item}}
+      {{/paper-item}}
+    {{/each}}
+  {{/paper-list}}
+  </div>
 </div>
 
 

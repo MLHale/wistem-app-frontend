@@ -17,14 +17,14 @@ export default Controller.extend({
       this.set('showDialog', false);
     },
 
-    flatButton(title, fields){
+    flatButton(title, fields, applicanttype){
       console.log(title);
 
-      alert('You are searching for ' + title + fields);
-
+      alert('You are searching for title ' + title + ' Fields: ' + fields +
+            ' Applicant types: ' + applicanttype);
+    },
+    toggleHidden() {
 
     }
-
-
   }
 });

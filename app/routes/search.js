@@ -146,7 +146,8 @@ export default Route.extend({
   model() {
     let data = {
         awards: this.getData(),
-        stemfields: this.getStemFields()
+        stemfields: this.getStemFields(),
+        applicanttype: this.getApplicantTypes()
       };
     return data;
   },
@@ -156,6 +157,13 @@ export default Route.extend({
     items.addObject("Science");
     items.addObject("Technology");
     items.addObject("Engineering");
+    return items
+  },
+  getApplicantTypes() {
+    let items = Ember.A([]);
+    items.addObject("Faculty");
+    items.addObject("Staff");
+    items.addObject("Students");
     return items
   }
 

@@ -12,7 +12,7 @@
 </div>
 
 <div class="{{if hidden "hidden"}}" style="color:blue;"  >
-    {{#paper-button onClick=(action login()}}login{{/paper-button}}
+    {{#paper-button onClick=(action "login"(username, password)}}login{{/paper-button}}
 </div>
 
 <div class="{{if (not hidden) "hidden"}}" >

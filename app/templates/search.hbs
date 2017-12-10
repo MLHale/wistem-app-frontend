@@ -12,17 +12,22 @@
       {{#power-select-multiple options=model.applicanttype selected=applicanttype placeholder="Select some applicants..." onchange=(action (mut applicanttype)) as |applicant|}}
         {{applicant}}
       {{/power-select-multiple}}
-      <div style="color:blue;">
-        {{#paper-button onClick=(action "toggleHidden")}}Advance Filters....{{/paper-button}}
+      <div class="{{if hidden "hidden"}}" style="color:blue;"  >
+          {{#paper-button onClick=(action "toggleHidden")}}Advance Filters....{{/paper-button}}
       </div>
 
-      <div>
+
+
+      <div class="{{if (not hidden) "hidden"}}">
         Other options are going here
         <br>
         <div style="color:blue;">
           {{#paper-button onClick=(action "toggleHidden")}}Hide Filters....{{/paper-button}}
-</div>
+        </div>
       </div>
+
+
+
 <div align="right">
   {{#paper-button raised=true onClick=(action "flatButton" title stemfield applicanttype )}}Search{{/paper-button}}
 </div>

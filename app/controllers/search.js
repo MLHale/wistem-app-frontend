@@ -24,6 +24,15 @@ export default Controller.extend({
             ' Applicant types: ' + applicanttype);
     },
     toggleHidden() {
+      if(this.get('hidden'))
+      {
+        console.log('here');
+        this.set('hidden', false);
+      }
+      else {
+        console.log('else');
+        this.set('hidden', true);
+      }
 
     }
   }

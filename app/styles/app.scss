@@ -15,4 +15,8 @@
   height: 50px;
 }
 
+div.hidden {
+  visibility: hidden;
+}
+
 @import "ember-power-select";

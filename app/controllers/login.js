@@ -1,11 +1,29 @@
 import Controller from '@ember/controller';
 
+
+let user = {
+  profile: {
+    name: 'Admin',
+    email: 'admin@unomaha.edu'
+  }
+};
+
 export default Controller.extend({
   actions: {
     login(username, password) {
-    this.set('currentuser', user);
+      console.log(username);
+      console.log(password);
+      if(username === 'admin' && password === 'password'){
+        console.log('success');
+        this.set('currentuser', user);
+        console.log(this.get('currentuser'))
+      }
+      else
+      {
+        console.log('failure');
+        return ('Wrong username and/or password')
+      }
+
+   }
   }
-     else {
-     return ('Wrong username and/or password')
-     }
-   },
+});

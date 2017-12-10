@@ -2,13 +2,13 @@
 <h3>Please log in</h3>
 
 <div class='field'>
-<label> User Name </label>
-{{input value=username}}
+  <label> User Name </label>
+  {{input value=username}}
 </div>
 
 <div class='field'>
-<label> Password </label>
-{{input value=password type="password"}}
+  <label> Password </label>
+  {{input value=password type="password"}}
 </div>
 
-{{#paper-button raised=true onClick=(action "raisedButton")}}Button with action{{/paper-button}}
+{{#paper-button raised=true onClick=(action "login" username password)}}Button with action{{/paper-button}}

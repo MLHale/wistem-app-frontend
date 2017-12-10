@@ -1,6 +1,12 @@
 
 <h3>Please log in</h3>
 
+<div class="{{if (not hidden) "hidden"}}" >
+  Wrong user name and / or password
+  <br>
+</div>
+
+
 <div class='field'>
   <label> User Name </label>
   {{input value=username}}
@@ -11,11 +17,7 @@
   {{input value=password type="password"}}
 </div>
 
-<div class="{{if hidden "hidden"}}" style="color:blue;"  >
-    {{#paper-button onClick=(action "login"(username, password)}}login{{/paper-button}}
-</div>
 
-<div class="{{if (not hidden) "hidden"}}" >
-  Wrong user name and / or password
-  <br>
-</div>
+    {{#paper-button onClick=(action "login" username password)}}login{{/paper-button}}
+
+

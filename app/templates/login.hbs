@@ -1,10 +1,7 @@
 
 <h3>Please log in</h3>
 
-<div class="{{if (not hidden) "hidden"}}" >
-  Wrong user name and / or password
-  <br>
-</div>
+
 
 
 <div class='field'>
@@ -21,3 +18,7 @@
     {{#paper-button onClick=(action "login" username password)}}login{{/paper-button}}
 
 
+    <div class="{{if (not hidden) "hidden"}}" >
+      Wrong user name and / or password
+      <br>
+    </div>

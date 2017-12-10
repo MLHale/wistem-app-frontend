@@ -19,8 +19,9 @@ export default Controller.extend({
         console.log(this.get('currentuser'))
       }
       else
-      this.set('hidden', false);
+
       {
+        this.set('hidden', false);
         console.log('failure');
         return ('Wrong username and/or password')
       }

@@ -1,6 +1,14 @@
 
 <h3>Please log in</h3>
 
-{{ember-login}}
+<div class='field'>
+<label> User Name </label>
+{{input value=username}}
+</div>
 
-<h3>If you wish to register please click {{#link-to "search"}}here{{/link-to}}</h3>
+<div class='field'>
+<label> Password </label>
+{{input value=password type="password"}}
+</div>
+
+<div class="btn btn-primary" {{action 'login'}}> Login </div>

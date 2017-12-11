@@ -1,11 +1,46 @@
 <div class="jumbo">
-{{#paper-list}}
-  {{#each model as |item|}}
-    {{#paper-item onClick=(action "openDialog" item) class="md-4-line"}}
-      {{award-listing item=item}}
-    {{/paper-item}}
-  {{/each}}
-{{/paper-list}}
+  <div>
+
+  {{paper-input class="flex-30" label="Award Title" value=title onChange=(action (mut title))}}
+      <br>
+       Stem Fields:
+      {{#power-select-multiple options=model.stemfields selected=stemfield placeholder="Select some fields..." onchange=(action (mut stemfield)) as |stemfields|}}
+        {{stemfields}}
+      {{/power-select-multiple}}
+      <br>
+       Applicants:
+      {{#power-select-multiple options=model.applicanttype selected=applicanttype placeholder="Select some applicants..." onchange=(action (mut applicanttype)) as |applicant|}}
+        {{applicant}}
+      {{/power-select-multiple}}
+      <div class="{{if hidden "hidden"}}" style="color:blue;"  >
+          {{#paper-button onClick=(action "toggleHidden")}}Advance Filters....{{/paper-button}}
+      </div>
+
+
+
+      <div class="{{if (not hidden) "hidden"}}">
+        Other options are going here
+        <br>
+        <div style="color:blue;">
+          {{#paper-button onClick=(action "toggleHidden")}}Hide Filters....{{/paper-button}}
+        </div>
+      </div>
+
+
+
+<div align="right">
+  {{#paper-button raised=true onClick=(action "flatButton" title stemfield applicanttype )}}Search{{/paper-button}}
+</div>
+  </div>
+  <div>
+  {{#paper-list}}
+    {{#each model.awards as |item|}}
+      {{#paper-item onClick=(action "openDialog" item)}}
+        {{award-listing item=item}}
+      {{/paper-item}}
+    {{/each}}
+  {{/paper-list}}
+  </div>
 </div>
 
 
@@ -29,6 +64,3 @@
     {{/paper-dialog-actions}}
   {{/paper-dialog}}
 {{/if}}
-
-
-

@@ -144,6 +144,27 @@ export default Route.extend({
   },
 
   model() {
-    return this.getData();
+    let data = {
+        awards: this.getData(),
+        stemfields: this.getStemFields(),
+        applicanttype: this.getApplicantTypes()
+      };
+    return data;
+  },
+  getStemFields() {
+    let items = Ember.A([]);
+    items.addObject("Math");
+    items.addObject("Science");
+    items.addObject("Technology");
+    items.addObject("Engineering");
+    return items
+  },
+  getApplicantTypes() {
+    let items = Ember.A([]);
+    items.addObject("Faculty");
+    items.addObject("Staff");
+    items.addObject("Students");
+    return items
   }
+
 });

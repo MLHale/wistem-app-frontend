@@ -17,5 +17,23 @@ export default Controller.extend({
       this.set('showDialog', false);
     },
 
+    flatButton(title, fields, applicanttype){
+      console.log(title);
+
+      alert('You are searching for title ' + title + ' Fields: ' + fields +
+            ' Applicant types: ' + applicanttype);
+    },
+    toggleHidden() {
+      if(this.get('hidden'))
+      {
+        console.log('here');
+        this.set('hidden', false);
+      }
+      else {
+        console.log('else');
+        this.set('hidden', true);
+      }
+
+    }
   }
 });

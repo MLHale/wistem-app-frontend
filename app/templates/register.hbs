@@ -1,12 +1,12 @@
 <h1>Register</h1>
 
-<div class="field">
-  <div class="field">
+ <div class="field">
+   <div class="field">
     <label>first name</label>
     {{input value=firstname type="password"}}
     {{display-errors errors=errors.firstname showErrors=showErrors}}
-  </div>
-  <div class="field">
+   </div>
+   <div class="field">
     <label>lastname</label>
     {{input value=password type="lastname"}}
     {{display-errors errors=errors.lastname showErrors=showErrors}}
@@ -30,6 +30,21 @@
   {{input value=password type="dept"}}
   {{display-errors errors=errors.dept showErrors=showErrors}}
 </div>
+<div class="field">
+<label>Org</label>
+{{input value=Org type="Org"}}
+{{display-errors errors=errors.dept showErrors=showErrors}}
+</div>
+<div class="field">
+<label>college</label>
+{{input value=Org type="college"}}
+{{display-errors errors=errors.dept showErrors=showErrors}}
+<label>other</label>
+{{input value=Org type="other"}}
+{{display-errors errors=errors.dept showErrors=showErrors}}
+
+</div>
 <div class="btn btn-primary" {{action 'register'}}>Register</div>
+
 
 {{outlet}}

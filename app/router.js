@@ -7,9 +7,13 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('search');
+  this.route('register');
+  this.route('login');
+  this.route('awardinfo');
+  this.route('home');
   this.route('about');
   this.route('contact');
-  this.route('index');
   this.route('awards');
   this.route('AddAward');
   this.route('EditAward');

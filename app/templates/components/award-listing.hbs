@@ -1,16 +1,14 @@
-{{#paper-item class="md-3-line"}}
-
-  <div class="md-list-item-text">
-    <h2>{{item.title}}</h2>
-    <h4>
-      <div>Applicants:
-      {{#each item.typeofapplicant as |applicant|}}
-        {{applicant}}
-      {{/each}}
-    </div>
-    </h4>
-    <p>Deadline: {{item.subm_deadline}}</p>
+<article class = "listing">
+  <img src = "{{award.image}}">
+  <h3>{{award.name}}</h3>
+  <div class = "detail-owner">
+    <span>Description:</span> {{award.description}}
   </div>
-  {{paper-divider}}
-
-{{/paper-item}}
+  <div class = "detail-owner">
+  <div class = "right">
+    {{#link-to 'EditAward' class="button"}}
+      Edit Award
+    {{/link-to}}
+  </div>
+</div>
+</article>

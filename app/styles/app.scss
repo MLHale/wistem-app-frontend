@@ -1,4 +1,15 @@
 @import 'ember-paper';
+<<<<<<< HEAD
+.paper-right{
+  marigin-left:500x;
+}
+.centered-form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items: center;
+=======
 
 #main {
   width: 100%;
@@ -13,6 +24,7 @@
 #main div {
   width: 50px;
   height: 50px;
+>>>>>>> 904a7c8ce59786e211ae6a344077ecd104a0e268
 }
 
 div.hidden {

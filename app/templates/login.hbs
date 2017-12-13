@@ -1,1 +1,24 @@
-{{outlet}}
+
+<h3>Please log in</h3>
+
+
+
+
+<div class='field'>
+  <label> User Name </label>
+  {{input value=username}}
+</div>
+
+<div class='field'>
+  <label> Password </label>
+  {{input value=password type="password"}}
+</div>
+
+
+    {{#paper-button onClick=(action "login" username password)}}login{{/paper-button}}
+
+
+    <div class="{{if (not hidden) "hidden"}}" >
+      Wrong user name and / or password
+      <br>
+    </div>

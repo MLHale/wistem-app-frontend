@@ -1,19 +1,9 @@
-
-{{!-- {{page-toolbar pageTitle="Award Information" isDemo=false}}
-{{#doc-content class="-layout-column flex-50"}}
-  {{#paper-card}} --}}
-    {{!-- {{#paper-toolbar}}
-      {{#paper-toolbar-tools}}
-        <h2>Award Information</h2>
-      {{/paper-toolbar-tools}}
-    {{/paper-toolbar}} --}}
-    {{#paper-content}}
-      {{!-- {{#paper-form onSubmit=(action "basicSubmitAction") as |form|}} --}}
+{{#paper-content}}
       {{#paper-form as |form|}}
         <div class="layout-column centered-form">
           <h4>Enter New Award Information</h4>
           <div class="layout-column flex-50">
-            {{form.input label="Awart Title" value=awardtitle onChange=(action (mut awardtitle)) required=true}}
+            {{form.input label="Award Title" value=awardtitle onChange=(action (mut awardtitle)) required=true}}
           </div>
           <div class="layout-column flex-50">
             {{form.input label="Sponsoring Organization" value=sponser onChange=(action (mut sponser)) required=true}}
@@ -50,7 +40,7 @@
         <div class="layout layout-sm-column">
           {{paper-input class="flex" label="Submission date" type="date" value=date onChange=(action (mut date))}}
         </div>
-          <div class="layout-column">
+          <div class="layout-sm-column">
             <h5>Select the applicant type. Check all that apply.</h5>
             {{#paper-checkbox value=staff onChange=(action (mut staff))}}
               Staff {{staff}}
@@ -103,7 +93,7 @@
               Service Learning{{service}}
             {{/paper-checkbox}}
             {{#paper-checkbox value=otherreq onChange=(action (mut otherreq))}}
-              Other : {{otherreq}}
+              Other :
             {{/paper-checkbox}}
               {{form.input label="Specify other requirements" value=othersreq onChange=(action (mut othersreq)) required=true}}
         {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}

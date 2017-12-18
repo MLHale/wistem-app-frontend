@@ -17,11 +17,12 @@ export default Controller.extend({
       this.set('showDialog', false);
     },
 
-    flatButton(title, fields, applicanttype){
+    flatButton(title, fields, applicanttype, description, url, sponsor){
       console.log(title);
 
       alert('You are searching for title ' + title + ' Fields: ' + fields +
-            ' Applicant types: ' + applicanttype);
+            ' Applicant types: ' + applicanttype + ' description ' + description +
+            ' url ' + url + ' sponsor ' + sponsor);
     },
     toggleHidden() {
       if(this.get('hidden'))

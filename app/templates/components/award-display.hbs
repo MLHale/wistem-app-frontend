@@ -5,4 +5,31 @@
   <p>
     Description: {{selectedAward.description}}
   </p>
+  <p>
+    Sponsor: {{selectedAward.sponsor_org}}
+  </p>
+  <p>
+    STEM Fields:
+    {{#each selectedAward.stem_field as |stem|}}
+      {{stem}}
+    {{/each}}
+  </p>
+  <p>
+    Award Purpose:
+    {{#each selectedAward.award_purpose as |purpose|}}
+      {{purpose}}
+    {{/each}}
+  </p>
+  <p>
+    Source: {{selectedAward.source}}
+  </p>
+  <p>
+    Additional Information: {{selectedAward.additional_info}}
+  </p>
+  <p>
+    Nomination Required: {{selectedAward.nom_req}}
+  </p>
+  <p>
+    Submition deadline: {{selectedAward.subm_deadline}}
+  </p>
 </div>

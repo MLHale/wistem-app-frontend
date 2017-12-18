@@ -16,7 +16,8 @@ export default Controller.extend({
       if(username === 'admin' && password === 'password'){
         console.log('success');
         this.set('currentuser', user);
-        console.log(this.get('currentuser'))
+        console.log(this.get('currentuser'));
+        this.transitionToRoute('search')
       }
       else
       {

@@ -1,3 +1,15 @@
+/**
+ * @Author: Matthew Hale <matthale>
+ * @Date:   2018-02-28T02:12:57-06:00
+ * @Email:  mlhale@unomaha.edu
+ * @Filename: environment.js
+ * @Last modified by:   matthale
+ * @Last modified time: 2018-02-28T02:14:19-06:00
+ * @Copyright: Copyright (C) 2018 Matthew L. Hale
+ */
+
+
+
 /* eslint-env node */
 'use strict';
 
@@ -5,7 +17,9 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'wistem-app-frontend',
     environment,
-    rootURL: '/',
+    rootURL: 'static/ember/',
+    bURL: '/',
+    serverName: 'http://localhost',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -45,6 +59,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.rootURL = "static/ember/"
   }
 
   return ENV;

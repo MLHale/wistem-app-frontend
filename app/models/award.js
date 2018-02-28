@@ -1,15 +1,31 @@
+/**
+ * @Author: Matthew Hale <matthale>
+ * @Date:   2018-02-28T00:25:25-06:00
+ * @Email:  mlhale@unomaha.edu
+ * @Filename: award.js
+ * @Last modified by:   matthale
+ * @Last modified time: 2018-02-28T02:27:18-06:00
+ * @Copyright: Copyright (C) 2018 Matthew L. Hale
+ */
+
+
+
 import DS from 'ember-data';
 
 export default DS.Model.extend({
 
-  AwardTitle: DS.attr('string'),
-  AwardDescription: DS.attr('string'),
-  AwardLink: DS.attr('string'),
-  STEMType: DS.attr('string'),
-  AwardSponsor: DS.attr('string'),
-  STEMField: DS.attr('string'),
-  OpenDate: DS.attr('date', { defaultValue() { return new Date(); } }),
-  SubmissionDate: DS.attr('date'),
-  ApplicantType: DS.attr('string'),
+  title: DS.attr('string'),
+  description: DS.attr('string'),
+  awardlink: DS.attr('string'),
+  sponsororg: DS.attr('string'),
+  recurring: DS.attr('string'),
+  nomreq: DS.attr('boolean'),
+  opendate: DS.attr('date', { defaultValue() { return new Date(); } }),
+  nomdeadline: DS.attr('date'),
+  submdeadline: DS.attr('date'),
+  source: DS.attr('string'),
+  previousapplicants: DS.attr('number'),
+  createdon: DS.attr('date'),
+
 
 });

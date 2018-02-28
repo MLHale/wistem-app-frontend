@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: award.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-02-28T02:27:18-06:00
+ * @Last modified time: 2018-02-28T12:02:05-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -27,5 +27,9 @@ export default DS.Model.extend({
   previousapplicants: DS.attr('number'),
   createdon: DS.attr('date'),
 
-
+  // Related fields
+  createdby: DS.belongsTo('user'),
+  applicanttypes: DS.hasMany('applicanttype'),
+  awardpurposes: DS.hasMany('awardpurpose'),
+  stemfields: DS.hasMany('stemfield')
 });

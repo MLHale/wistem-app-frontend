@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: awards.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-02-28T12:07:02-06:00
+ * @Last modified time: 2018-02-28T12:13:40-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -43,6 +43,6 @@ export default Route.extend({
     //   record.set('title','savable');
     //   record.save();
     // });
-    return this.store.findAll('award', {include: 'applicanttypes,awardpurposes,stemfields,createdby'});
+    return this.store.findAll('award', {include: 'applicanttypes,awardpurposes,stemfields,createdby,createdby.areasofinterest,createdby.user'});
   }
 });

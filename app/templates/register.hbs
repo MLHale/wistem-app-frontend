@@ -1,1 +1,23 @@
-{{outlet}}
+<div style="border-style: outset;" align="center" >
+  <p>
+    {{paper-input class="flex-30" label="Username" value=name onChange=(action (mut name))}}
+  </p>
+  <p>
+    {{paper-input class="flex-40" label="Password" type="password" value=password onChange=(action (mut password))}}
+  </p>
+  <p>
+    {{paper-input class="flex-30" label="Email" value=email onChange=(action (mut email))}}
+  </p>
+  <p>
+    {{paper-input class="flex-40" label="College" value=college onChange=(action (mut college))}}
+  </p>
+  <p>
+    {{paper-input class="flex-30" label="Department" value=department onChange=(action (mut department))}}
+  </p>
+  {{#paper-button onClick=(action "create" name password)}}Create Account{{/paper-button}}
+
+  <div class="{{if (not hidden) "hidden"}}" style="color:red" >
+    The create failed.. add some reason why
+  </div>
+
+</div>

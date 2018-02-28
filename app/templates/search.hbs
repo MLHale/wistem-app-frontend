@@ -12,24 +12,32 @@
       {{#power-select-multiple options=model.applicanttype selected=applicanttype placeholder="Select some applicants..." onchange=(action (mut applicanttype)) as |applicant|}}
         {{applicant}}
       {{/power-select-multiple}}
-      <div class="{{if hidden "hidden"}}" style="color:blue;"  >
-          {{#paper-button onClick=(action "toggleHidden")}}Advance Filters....{{/paper-button}}
-      </div>
 
 
+    {{#bs-accordion as |acc|}}
+      {{#acc.item value="1" as |aitem|}}
+        {{#aitem.title}}
+          <strong style="color:blue;">Advanced Filter</strong>
+        {{/aitem.title}}
+        {{#aitem.body}}
+          {{paper-input class="flex-30" label="Description" value=description onChange=(action (mut description))}}
+          {{paper-input class="flex-30" label="Award URL" value=awardurl onChange=(action (mut awardurl))}}
+          {{paper-input class="flex-30" label="Sponsor" value=sponsor onChange=(action (mut sponsor))}}
 
-      <div class="{{if (not hidden) "hidden"}}">
-        Other options are going here
-        <br>
-        <div style="color:blue;">
-          {{#paper-button onClick=(action "toggleHidden")}}Hide Filters....{{/paper-button}}
-        </div>
-      </div>
+          {{#power-select-multiple options=model.awardsources selected=awardsources placeholder="Sources" onchange=(action (mut awardsources)) as |awardsource|}}
+            {{awardsource}}
+          {{/power-select-multiple}}
+          {{#power-select-multiple options=model.awardpurpose selected=awardpurpose placeholder="Purpose" onchange=(action (mut awardpurpose)) as |purpose|}}
+            {{purpose}}
+          {{/power-select-multiple}}
+        {{/aitem.body}}
+      {{/acc.item}}
+    {{/bs-accordion}}
 
 
 
 <div align="right">
-  {{#paper-button raised=true onClick=(action "flatButton" title stemfield applicanttype )}}Search{{/paper-button}}
+  {{#paper-button raised=true onClick=(action "flatButton" title stemfield applicanttype description awardurl sponsor)}}Search{{/paper-button}}
 </div>
   </div>
   <div>

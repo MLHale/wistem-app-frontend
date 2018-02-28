@@ -24,18 +24,10 @@ export default Route.extend({
         "Science", "Math", "Technology"
       ],
       additional_info: 'a long text',
-      source: 'Somewhere',
+      source: 'Federal government',
       previous_applicants: 20,
       created_by: 'Ties to profile',
       created_on: '2017-10-03',
-
-
-      category: 'cat1',
-      requirements: 'string for now, requirements',
-      criteria: 'string for criteriat',
-      typeofapplicant: [
-        "Faculty", "Student", "Staff"
-      ]
 
     });
     items.addObject({
@@ -59,18 +51,11 @@ export default Route.extend({
         "Science", "Math", "Technology"
       ],
       additional_info: 'a long text',
-      source: 'Somewhere',
+      source: 'Federal government',
       previous_applicants: 20,
       created_by: 'Ties to profile',
       created_on: '2017-10-03',
 
-
-      category: 'cat1',
-      requirements: 'string for now, requirements',
-      criteria: 'string for criteriat',
-      typeofapplicant: [
-        "Faculty", "Student", "Staff"
-      ]
     });
     items.addObject({
       id: 3,
@@ -93,18 +78,11 @@ export default Route.extend({
         "Science", "Math", "Technology"
       ],
       additional_info: 'a long text',
-      source: 'Somewhere',
+      source: 'Federal government',
       previous_applicants: 20,
       created_by: 'Ties to profile',
       created_on: '2017-10-03',
 
-
-      category: 'cat1',
-      requirements: 'string for now, requirements',
-      criteria: 'string for criteriat',
-      typeofapplicant: [
-        "Faculty", "Student", "Staff"
-      ]
     });
     items.addObject({
       id: 4,
@@ -127,18 +105,11 @@ export default Route.extend({
         "Science", "Math", "Technology"
       ],
       additional_info: 'a long text',
-      source: 'Somewhere',
+      source: 'Federal government',
       previous_applicants: 20,
       created_by: 'Ties to profile',
       created_on: '2017-10-03',
 
-
-      category: 'cat1',
-      requirements: 'string for now, requirements',
-      criteria: 'string for criteriat',
-      typeofapplicant: [
-        "Faculty", "Student", "Staff"
-      ]
     });
     return items;
   },
@@ -147,7 +118,9 @@ export default Route.extend({
     let data = {
         awards: this.getData(),
         stemfields: this.getStemFields(),
-        applicanttype: this.getApplicantTypes()
+        applicanttype: this.getApplicantTypes(),
+        awardsources: this.getAwardSources(),
+      awardpurpose: this.getAwardPurpose()
       };
     return data;
   },
@@ -165,6 +138,24 @@ export default Route.extend({
     items.addObject("Staff");
     items.addObject("Students");
     return items
+  },
+  getAwardSources() {
+    let items = Ember.A([]);
+    items.addObject("Federal Government");
+    items.addObject("State Government");
+    items.addObject("Local Government");
+    items.addObject("Internal");
+    items.addObject("Private Industry");
+    items.addObject("Other");
+    return items;
+  },
+  getAwardPurpose() {
+    let items = Ember.A([]);
+    items.addObject("Mentoring");
+    items.addObject("Projects");
+    items.addObject("Other");
+    return items;
   }
+
 
 });

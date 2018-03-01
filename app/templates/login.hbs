@@ -1,17 +1,20 @@
+<!--
+@Author: Matthew Hale <matthale>
+@Date:   2018-03-01T16:19:15-06:00
+@Email:  mlhale@unomaha.edu
+@Filename: login.hbs
+@Last modified by:   matthale
+@Last modified time: 2018-03-01T17:22:41-06:00
+@Copyright: Copyright (C) 2018 Matthew L. Hale
+-->
 
-<h3>Please log in</h3>
-<p>
-  {{paper-input class="flex-30" label="Name" value=name onChange=(action (mut name))}}
-</p>
-<p>
-  {{paper-input class="flex-40" label="Password" type="password" value=password onChange=(action (mut password))}}
-</p>
-{{#paper-button onClick=(action "login" name password)}}login{{/paper-button}}
+
+{{paper-input class="flex-30" label="Name" value=auth.username onChange=(action (mut auth.username))}}
+{{paper-input class="flex-40" label="Password" type="password" value=auth.password onChange=(action (mut auth.password))}}
+{{#paper-button raised=true onClick=(action "login")}}login{{/paper-button}}
 
 
-<div class="{{if (not hidden) "hidden"}}" style="color:red" >
-  Wrong user name and / or password. Please try again
-</div>
+
 <div align="center">
 Don't have an account?
 {{#link-to 'register' class="button"}}

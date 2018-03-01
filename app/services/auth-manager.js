@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: auth-manager.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-03-01T01:25:06-06:00
+ * @Last modified time: 2018-03-01T17:24:09-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -76,11 +76,20 @@ export default Ember.Service.extend({
 					localStorage.removeItem('password');
 				}
 				auth.set('password', '');
+				auth.set('errorMsg', '');
+				auth.get('notifications').success(`Login successful. Loading your data...`, {
+					clearDuration: 3000,
+					autoClear: true
+				});
 
 			} else{
 				//errors
 				console.log('Login POST Request to /api/session/ was unsuccessful.');
 				auth.set('errorMsg', response.data.message);
+				auth.get('notifications').warning(`${response.data.message}`, {
+					clearDuration: 3000,
+					autoClear: true
+				});
 			}
 		});
 
@@ -105,10 +114,10 @@ export default Ember.Service.extend({
 					auth.set('username', localStorage.username);
 					auth.set('password', localStorage.password);
 				}
-				//turn of eye tracking
-				// console.log('Disabling Eyetracking at http://localhost:8001/session/');
-				// Ember.$.ajax({url: 'http://localhost:8001/session/', type: 'DELETE'})
-
+				auth.get('notifications').success(`You are now logged out!`, {
+					clearDuration: 3000,
+					autoClear: true
+				});
 				auth.get('routing').transitionTo('login');
 
 			}

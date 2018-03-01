@@ -1,25 +1,22 @@
+/**
+ * @Author: Matthew Hale <matthale>
+ * @Date:   2018-03-01T16:19:15-06:00
+ * @Email:  mlhale@unomaha.edu
+ * @Filename: login.js
+ * @Last modified by:   matthale
+ * @Last modified time: 2018-03-01T17:06:53-06:00
+ * @Copyright: Copyright (C) 2018 Matthew L. Hale
+ */
+
+
+
 import Controller from '@ember/controller';
-
-
-let user = {
-  profile: {
-    name: 'Admin',
-    email: 'admin@unomaha.edu'
-  }
-};
 
 export default Controller.extend({
   actions: {
-    login(username, password) {
-      if(username === 'admin' && password === 'password'){
-        this.set('currentuser', user);
-        this.transitionToRoute('search')
-      }
-      else
-      {
-        this.set('hidden', true);
-      }
-
-   }
+    login(){
+      console.log('login called');
+      this.get('auth').login();
+    }
   }
 });

@@ -91,7 +91,7 @@
 
 {{#if showDialog}}
   {{#paper-dialog class="flex" onClose=(action "closeDialog" "cancel") origin=dialogOrigin clickOutsideToClose=true}}
-    {{#paper-toolbar}}
+    {{#paper-toolbar accent=true}}
       {{#paper-toolbar-tools}}
         <h2>{{selectedAward.title}}</h2>
         <span class="flex"></span>

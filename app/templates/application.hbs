@@ -20,6 +20,12 @@
               <span>{{item.title}}</span>
             {{/content.menu-item}}
           {{/each}}
+          {{#each navigation.internaladminmenuitems as |item|}}
+            {{#content.menu-item onClick=(transition-to item.route)}}
+              {{#if item.icon}}{{paper-icon item.icon}}{{/if}}
+              <span>{{item.title}}</span>
+            {{/content.menu-item}}
+          {{/each}}
         {{/menu.content}}
       {{/paper-menu}}
       <h2>
@@ -37,8 +43,12 @@
               {{/paper-button}}
             {{/menu.trigger}}
             {{#menu.content as |content|}}
+              {{#content.menu-item onClick=(transition-to "profile")}}
+                <p style="width: 150px;">Your account</p>
+                {{paper-icon "person" class="md-menu-align-target"}}
+              {{/content.menu-item}}
               {{#content.menu-item onClick=(action "logout")}}
-                <p style="width: 190px;">Logout</p>
+                <p style="width: 150px;">Logout</p>
                 {{paper-icon "power_settings_new" class="md-menu-align-target"}}
               {{/content.menu-item}}
             {{/menu.content}}
@@ -61,7 +71,7 @@
   <div class="footer layout-row layout-align-space-between-end">
     <div class="left-footer">
       <p class="credit">
-        © 2018 <a href="https://www.unomaha.edu/wistem-professional-development/index.php" target="_blank" style="color: inherit;">WiSTEM</a>, site created by <a href="https://github.com/MLHale/CYBR8470/" target="_blank" style="color: inherit;">Students</a> and <a href="http://faculty.ist.unomaha.edu/mhale/" target="_blank" style="color: inherit;">Dr. Matthew L. Hale</a>
+        © 2018 <a href="https://www.unomaha.edu/wistem-professional-development/index.php" target="_blank" style="color: inherit;">WiSTEM</a>, created by <a href="https://github.com/MLHale/CYBR8470/" target="_blank" style="color: inherit;">CYBR 8470 Students</a> and <a href="http://faculty.ist.unomaha.edu/mhale/" target="_blank" style="color: inherit;">Dr. Matthew L. Hale</a>
       </p>
     </div>
     <div class="center-footer">

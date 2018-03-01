@@ -23,8 +23,6 @@ Router.map(function() {
   this.route('register');
   this.route('login');
   this.route('awardinfo');
-  this.route('about');
-  this.route('contact');
   this.route('awards');
   this.route('AddAward');
   this.route('EditAward');

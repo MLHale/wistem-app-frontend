@@ -3,13 +3,14 @@
 // @Email:  mlhale@unomaha.edu
 // @Filename: app.scss
 // @Last modified by:   matthale
-// @Last modified time: 2018-03-01T01:28:29-06:00
+// @Last modified time: 2018-03-01T03:25:35-06:00
 // @Copyright: Copyright (C) 2018 Matthew L. Hale
 
 
 
 @import 'ember-paper';
 @import "ember-power-select";
+@import "ember-paper-expansion-panel";
 // @import "ember-bootstrap/bootstrap";
 .footer {
   padding: 0px 8px 8px 8px;
@@ -17,6 +18,18 @@
 
 .credit {
   color: #999;
+}
+
+.landing-page-card {
+  height: 100% !important;
+}
+
+// .landing-page-container {
+//   height: 85vh;
+// }
+
+.landing-page-logo {
+  padding: 24px 16px 16px;
 }
 
 .centered-form{
@@ -28,4 +41,17 @@
 }
 .main {
   padding: 8px;
+}
+
+.md-chips {
+  font-size: 11px;
+}
+.award-list-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.award-list-details {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }

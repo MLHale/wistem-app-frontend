@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: navigation.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-03-01T00:34:29-06:00
+ * @Last modified time: 2018-03-01T02:47:10-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -19,7 +19,8 @@ export default Service.extend({
 
   ]) }),
   internalmenuitems: ArrayProxy.create({ content: A([
-      {route: 'index', icon: 'home', title: 'home'}
+      {route: 'index', icon: 'home', title: 'home'},
+      {route: 'awards', icon:'view_list', title: "awards"}
   ]) }),
   dynamicbuttons: ArrayProxy.create({content: A()}),
 });

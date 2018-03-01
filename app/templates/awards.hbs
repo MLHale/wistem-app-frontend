@@ -1,20 +1,33 @@
-<div class="jumbo">
-  <div class="right tomster"></div>
-  <h2>Welcome!</h2>
-  <p>We hope you find exactly what you're looking for in a place to stay.</p>
-  {{#link-to 'about' class="button"}}
-    About Us
-  {{/link-to}}
-</div>
 
-<div class = "jumbo">
-  <div class = "right">
-  {{#link-to 'AddAward' class="button"}}
-    Add Award
-  {{/link-to}}
-</div>
-</div>
+{{#paper-card as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Upcoming Applications{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
+    {{#paper-list}}
+      {{#paper-subheader}}Upcoming Applications{{/paper-subheader}}
+      {{#each model as |award|}}
+        {{paper-divider}}
+        {{#paper-item class="md-3-line"}}
 
-  {{#each model as  |awardUnit|}}
-  {{award-listing award = awardUnit}}
-  {{/each}}
+          <div class="md-list-item-text">
+            <h2>{{item.title}}</h2>
+            <h4>
+              <div>Applicants:
+                {{#each item.typeofapplicant as |applicant|}}
+                  {{applicant}}
+                {{/each}}
+              </div>
+            </h4>
+            <p>Deadline: {{item.subm_deadline}}</p>
+          </div>
+
+
+        {{/paper-item}}
+        {{paper-divider}}
+      {{/each}}
+    {{/paper-list}}
+  {{/card.content}}
+{{/paper-card}}

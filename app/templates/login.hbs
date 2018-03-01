@@ -1,22 +1,20 @@
-<div style="border-style: outset;" align="center" >
-  <h3>Please log in</h3>
-  <p>
+
+<h3>Please log in</h3>
+<p>
   {{paper-input class="flex-30" label="Name" value=name onChange=(action (mut name))}}
-  </p>
-  <p>
+</p>
+<p>
   {{paper-input class="flex-40" label="Password" type="password" value=password onChange=(action (mut password))}}
-  </p>
-  {{#paper-button onClick=(action "login" name password)}}login{{/paper-button}}
+</p>
+{{#paper-button onClick=(action "login" name password)}}login{{/paper-button}}
 
 
-  <div class="{{if (not hidden) "hidden"}}" style="color:red" >
-    Wrong user name and / or password. Please try again
-  </div>
+<div class="{{if (not hidden) "hidden"}}" style="color:red" >
+  Wrong user name and / or password. Please try again
 </div>
 <div align="center">
-  Don't have an account?
-  {{#link-to 'register' class="button"}}
-  Sign up!
-  {{/link-to}}
-
+Don't have an account?
+{{#link-to 'register' class="button"}}
+Sign up!
+{{/link-to}}
 </div>

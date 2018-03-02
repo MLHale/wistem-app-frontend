@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: awards.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-03-02T01:22:18-06:00
+ * @Last modified time: 2018-03-02T01:56:34-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -14,6 +14,9 @@ import Controller from '@ember/controller';
 import Ember from 'ember';
 
 export default Controller.extend({
+  /**
+    Filters are bound to search interface fields
+  **/
   filters: Ember.ObjectProxy.create({content: Ember.Object.create({
     title: null,
     stemfields: Ember.ArrayProxy.create({content: Ember.A([])}),
@@ -24,6 +27,11 @@ export default Controller.extend({
     sources: Ember.ArrayProxy.create({content: Ember.A([])}),
     purposes: Ember.ArrayProxy.create({content: Ember.A([])}),
   })}),
+
+  /**
+    FilteredAwards are displayed in the search interface. The field is binding-aware, meaning it updates anytime the attached filter field is updated.
+    The output of filteredAwards is the set of awards that match all criteria. Regex is used where appropriate for partial matching.
+  **/
   filteredAwards: Ember.computed(
     'model.awards.@each',
 
@@ -38,7 +46,6 @@ export default Controller.extend({
   function(){
     var filters = this.get('filters');
     var awards = this.get('model.awards');
-    console.log('filtering');
 
     // filter by award title
     if(filters.get('title')){
@@ -130,7 +137,11 @@ export default Controller.extend({
 
     return awards;
   }),
+
   actions: {
+    /**
+      Set of functions related to opening and closing modals that display additional award details
+    **/
     openDialog(item, event) {
       this.set('dialogOrigin', $(event.currentTarget));
       this.set('selectedAward', item);
@@ -140,6 +151,10 @@ export default Controller.extend({
       this.set('result', result);
       this.set('showDialog', false);
     },
+
+    /**
+      Not currently in use. Filters update automatically without the need to "submit"
+    **/
     search(){
 
     },

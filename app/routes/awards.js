@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: awards.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-03-01T23:00:07-06:00
+ * @Last modified time: 2018-03-02T01:52:31-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -14,6 +14,9 @@ import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
 
 export default Route.extend({
+  /**
+    Load awards for display and other fields for filtering interface
+  **/
   model(){
     return RSVP.hash({
       awards: this.store.findAll('award', {include: 'applicanttypes,awardpurposes,stemfields,createdby,createdby.areasofinterest,createdby.user,source'}),
@@ -21,9 +24,6 @@ export default Route.extend({
       applicanttypes: this.store.findAll('applicanttype'),
       sources: this.store.findAll('source'),
       purposes: this.store.findAll('awardpurpose'),
-
-
     })
-
   }
 });

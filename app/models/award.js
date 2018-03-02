@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: award.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-03-01T22:59:21-06:00
+ * @Last modified time: 2018-03-02T01:52:02-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -13,7 +13,6 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-
   title: DS.attr('string'),
   description: DS.attr('string'),
   awardlink: DS.attr('string'),
@@ -23,7 +22,6 @@ export default DS.Model.extend({
   opendate: DS.attr('date', { defaultValue() { return new Date(); } }),
   nomdeadline: DS.attr('date'),
   submdeadline: DS.attr('date'),
-
   previousapplicants: DS.attr('number'),
   createdon: DS.attr('date'),
 

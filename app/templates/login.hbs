@@ -8,16 +8,31 @@
 @Copyright: Copyright (C) 2018 Matthew L. Hale
 -->
 
+<div class="layout-column flex layout-align-center-center">
+  {{#paper-card class="landing-page-card" as |card|}}
+    {{#card.title as |title|}}
+      {{#title.text as |text|}}
+        {{#text.headline}}Login{{/text.headline}}
+      {{/title.text}}
+    {{/card.title}}
+    {{#card.content}}
+      {{#paper-form onSubmit=(action "login") as |form|}}
+        <div class="layout-row">
+          {{form.input class="flex" label="Username" value=auth.username onChange=(action (mut auth.username))}}
+          {{form.input class="flex" label="Password" type="password" value=auth.password onChange=(action (mut auth.password))}}
+        </div>
+        <div class="layout-row">
+          {{#form.submit-button class="flex" raised=true onClick=(action "login")}}login{{/form.submit-button}}
+        </div>
+      {{/paper-form}}
+      <div class="layout-row layout-align-center">
+        <p>Not registered?
+          {{#link-to 'register' class="button"}}
+            Create an account.
+          {{/link-to}}
+        </p>
+      </div>
+    {{/card.content}}
 
-{{paper-input class="flex-30" label="Name" value=auth.username onChange=(action (mut auth.username))}}
-{{paper-input class="flex-40" label="Password" type="password" value=auth.password onChange=(action (mut auth.password))}}
-{{#paper-button raised=true onClick=(action "login")}}login{{/paper-button}}
-
-
-
-<div align="center">
-Don't have an account?
-{{#link-to 'register' class="button"}}
-Sign up!
-{{/link-to}}
+  {{/paper-card}}
 </div>

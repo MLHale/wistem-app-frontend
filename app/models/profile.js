@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: profile.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-02-28T12:09:26-06:00
+ * @Last modified time: 2018-03-02T01:52:09-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -17,6 +17,8 @@ export default DS.Model.extend({
   college: DS.attr('string'),
   dept: DS.attr('string'),
   otherdetails: DS.attr('string'),
+
+  // Related fields
   user: DS.belongsTo('user'),
   areasofinterest: DS.hasMany('areaofinterest')
 });

@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: user.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-03-02T01:35:39-06:00
+ * @Last modified time: 2018-03-02T03:32:29-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -17,5 +17,5 @@ export default DS.Model.extend({
 	email: DS.attr('string'),
 	firstname: DS.attr('string'),
   lastname: DS.attr('string'),
-  issuperuser: DS.attr('boolean')
+  issuperuser: DS.attr('boolean'),
 });

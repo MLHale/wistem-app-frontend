@@ -22,7 +22,7 @@
           {{form.input class="flex" label="Password" type="password" value=auth.password onChange=(action (mut auth.password))}}
         </div>
         <div class="layout-row">
-          {{#form.submit-button class="flex" raised=true onClick=(action "login")}}login{{/form.submit-button}}
+          {{#form.submit-button class="flex" raised=true}}login{{/form.submit-button}}
         </div>
       {{/paper-form}}
       <div class="layout-row layout-align-center">

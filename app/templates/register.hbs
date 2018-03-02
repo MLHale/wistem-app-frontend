@@ -1,23 +1,28 @@
-<div style="border-style: outset;" align="center" >
-  <p>
-    {{paper-input class="flex-30" label="Username" value=name onChange=(action (mut name))}}
-  </p>
-  <p>
-    {{paper-input class="flex-40" label="Password" type="password" value=password onChange=(action (mut password))}}
-  </p>
-  <p>
-    {{paper-input class="flex-30" label="Email" value=email onChange=(action (mut email))}}
-  </p>
-  <p>
-    {{paper-input class="flex-40" label="College" value=college onChange=(action (mut college))}}
-  </p>
-  <p>
-    {{paper-input class="flex-30" label="Department" value=department onChange=(action (mut department))}}
-  </p>
-  {{#paper-button onClick=(action "create" name password)}}Create Account{{/paper-button}}
+<div class="layout-column flex layout-align-center-center">
+  {{#paper-card class="landing-page-card" as |card|}}
+    {{#card.title as |title|}}
+      {{#title.text as |text|}}
+        {{#text.headline}}Register for WiSTEM Award Tracker{{/text.headline}}
+      {{/title.text}}
+    {{/card.title}}
+    {{#card.content}}
+      {{#paper-form onSubmit=(action "register") as |form|}}
+        <div class="layout-row">
+          {{form.input class="flex" label="Username" value=model.username onChange=(action (mut model.username))}}
+        </div>
+        <div class="layout-row">
+          {{form.input class="flex" label="Password" type="password" value=model.password onChange=(action (mut model.password))}}
+          {{form.input class="flex" label="Confirm Password" type="password" value=confirmpassword onChange=(action (mut confirmpassword))}}
+        </div>
+        <div class="layout-row">
+          {{form.input class="flex" label="Email" value=model.email onChange=(action (mut model.email))}}
+          {{form.input class="flex" label="Confirm Email" value=confirmemail onChange=(action (mut confirmemail))}}
+        </div>
+        <div class="layout-row">
+          {{#form.submit-button class="flex" raised=true onClick=(action "register")}}Register{{/form.submit-button}}
+        </div>
+      {{/paper-form}}
+    {{/card.content}}
 
-  <div class="{{if (not hidden) "hidden"}}" style="color:red" >
-    The create failed.. add some reason why
-  </div>
-
+  {{/paper-card}}
 </div>

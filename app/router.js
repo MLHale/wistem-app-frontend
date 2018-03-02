@@ -26,6 +26,7 @@ Router.map(function() {
   this.route('awards');
   this.route('AddAward');
   this.route('EditAward');
+  this.route('profile');
 });
 
 export default Router;

@@ -4,16 +4,26 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: awards.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-03-01T01:23:44-06:00
+ * @Last modified time: 2018-03-01T23:00:07-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
 
 
 import Route from '@ember/routing/route';
+import RSVP from 'rsvp';
 
 export default Route.extend({
   model(){
-    return this.store.findAll('award', {include: 'applicanttypes,awardpurposes,stemfields,createdby,createdby.areasofinterest,createdby.user'});
+    return RSVP.hash({
+      awards: this.store.findAll('award', {include: 'applicanttypes,awardpurposes,stemfields,createdby,createdby.areasofinterest,createdby.user,source'}),
+      stemfields: this.store.findAll('stemfield'),
+      applicanttypes: this.store.findAll('applicanttype'),
+      sources: this.store.findAll('source'),
+      purposes: this.store.findAll('awardpurpose'),
+
+
+    })
+
   }
 });

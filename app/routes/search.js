@@ -1,3 +1,15 @@
+/**
+ * @Author: Matthew Hale <matthale>
+ * @Date:   2018-02-28T02:11:26-06:00
+ * @Email:  mlhale@unomaha.edu
+ * @Filename: search.js
+ * @Last modified by:   matthale
+ * @Last modified time: 2018-03-01T22:28:34-06:00
+ * @Copyright: Copyright (C) 2018 Matthew L. Hale
+ */
+
+
+
 import Route from '@ember/routing/route';
 
 export default Route.extend({
@@ -124,38 +136,6 @@ export default Route.extend({
       };
     return data;
   },
-  getStemFields() {
-    let items = Ember.A([]);
-    items.addObject("Math");
-    items.addObject("Science");
-    items.addObject("Technology");
-    items.addObject("Engineering");
-    return items
-  },
-  getApplicantTypes() {
-    let items = Ember.A([]);
-    items.addObject("Faculty");
-    items.addObject("Staff");
-    items.addObject("Students");
-    return items
-  },
-  getAwardSources() {
-    let items = Ember.A([]);
-    items.addObject("Federal Government");
-    items.addObject("State Government");
-    items.addObject("Local Government");
-    items.addObject("Internal");
-    items.addObject("Private Industry");
-    items.addObject("Other");
-    return items;
-  },
-  getAwardPurpose() {
-    let items = Ember.A([]);
-    items.addObject("Mentoring");
-    items.addObject("Projects");
-    items.addObject("Other");
-    return items;
-  }
 
 
 });

@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: application.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-03-01T01:24:10-06:00
+ * @Last modified time: 2018-03-02T01:36:55-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -16,7 +16,7 @@ import Ember from 'ember';
 export default Controller.extend({
   actions: {
     externalLink(item){
-      window.open(item.link);
+      window.open(item.route);
     },
     openDialog(event) {
       this.set('dialogOrigin', Ember.$(event.currentTarget));

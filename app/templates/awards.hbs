@@ -14,17 +14,19 @@
 
     {{#expanded.content}}
       <div class="layout-row">
-        {{paper-input class="flex" label="Award Title" value=title onChange=(action (mut title))}}
-        <div class="flex-30">
+        {{paper-input class="flex-30" label="Award Title" value=filters.title onChange=(action (mut filters.title))}}
+        {{paper-input class="flex" label="Sponsor" value=filters.sponsororg onChange=(action (mut filters.sponsororg))}}
+
+        <div class="flex-25">
           Filter by stem field:
-          {{#power-select-multiple options=model.stemfields selected=stemfield placeholder="Select stem fields..." onchange=(action (mut stemfield)) as |stemfields|}}
-            {{stemfields}}
+          {{#power-select-multiple options=model.stemfields selected=filters.stemfields placeholder="Select stem fields..." onchange=(action (mut filters.stemfields)) as |stemfield|}}
+            {{stemfield.name}}
           {{/power-select-multiple}}
         </div>
-        <div class="flex-30">
+        <div class="flex-25">
           Filter by who can apply:
-          {{#power-select-multiple options=model.applicanttype selected=applicanttype placeholder="Select applicant types..." onchange=(action (mut applicanttype)) as |applicant|}}
-            {{applicant}}
+          {{#power-select-multiple options=model.applicanttypes selected=filters.applicanttypes placeholder="Select applicant types..." onchange=(action (mut filters.applicanttypes)) as |applicanttype|}}
+            {{applicanttype.name}}
           {{/power-select-multiple}}
         </div>
       </div>
@@ -44,31 +46,30 @@
 
           {{#expanded.content}}
             <div class="layout-row">
-              {{paper-input class="flex" label="Description" value=description onChange=(action (mut description))}}
-              {{paper-input class="flex" label="Award URL" value=awardurl onChange=(action (mut awardurl))}}
-              {{paper-input class="flex" label="Sponsor" value=sponsor onChange=(action (mut sponsor))}}
+              {{paper-input class="flex" label="Award URL" value=filters.awardlink onChange=(action (mut filters.awardlink))}}
+              {{paper-input class="flex" label="Description" value=filters.description onChange=(action (mut filters.description))}}
             </div>
             <div class="layout-row">
-              {{#power-select-multiple class="flex" options=model.awardsources selected=awardsources placeholder="Sources" onchange=(action (mut awardsources)) as |awardsource|}}
-                {{awardsource}}
+              {{#power-select-multiple class="flex" options=model.sources selected=filters.sources placeholder="Sources" onchange=(action (mut filters.sources)) as |awardsource|}}
+                {{awardsource.name}}
               {{/power-select-multiple}}
-              {{#power-select-multiple class="flex" options=model.awardpurpose selected=awardpurpose placeholder="Purpose" onchange=(action (mut awardpurpose)) as |purpose|}}
-                {{purpose}}
+              {{#power-select-multiple class="flex" options=model.purposes selected=filters.purposes placeholder="Purpose" onchange=(action (mut filters.purposes)) as |purpose|}}
+                {{purpose.name}}
               {{/power-select-multiple}}
             </div>
           {{/expanded.content}}
         {{/advsearch.expanded}}
       {{/paper-expansion-panel}}
     {{/expanded.content}}
-    {{#expanded.footer}}
+    {{!-- {{#expanded.footer}}
         {{#paper-button accent=true class="flex" onClick=(action "search")}}Find Awards{{/paper-button}}
-    {{/expanded.footer}}
+    {{/expanded.footer}} --}}
   {{/panel.expanded}}
 {{/paper-expansion-panel}}
 
 {{#paper-list}}
   {{#paper-subheader}}Click an award below to find more information about the application.{{/paper-subheader}}
-  {{#each model as |award|}}
+  {{#each filteredAwards as |award|}}
     {{#paper-item class="md-3-line" onClick=(action "openDialog" award) as |listitem|}}
         <div class="md-list-item-text">
           <h3><strong>Award name:</strong> {{award.title}}</h3>

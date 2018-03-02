@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: router.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-02-28T02:13:21-06:00
+ * @Last modified time: 2018-03-02T01:48:18-06:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -19,13 +19,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('search');
   this.route('register');
   this.route('login');
-  this.route('awardinfo');
   this.route('awards');
-  this.route('AddAward');
-  this.route('EditAward');
   this.route('profile');
 });
 

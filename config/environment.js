@@ -4,7 +4,7 @@
  * @Email:  mlhale@unomaha.edu
  * @Filename: environment.js
  * @Last modified by:   matthale
- * @Last modified time: 2018-02-28T02:14:19-06:00
+ * @Last modified time: 2018-03-28T17:57:50-05:00
  * @Copyright: Copyright (C) 2018 Matthew L. Hale
  */
 
@@ -59,6 +59,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.serverName = 'http://wistem.mlhale.com',
     ENV.rootURL = "static/ember/"
   }
 
